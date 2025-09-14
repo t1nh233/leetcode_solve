@@ -1,51 +1,34 @@
-Giải thích bài toán Two Sum
-Các hướng giải
+text = """Các hướng giải cho bài Two Sum
 
-Brute Force (duyệt hai vòng lặp lồng nhau)
+1. Brute Force (duyệt 2 vòng lặp lồng nhau)
+   - Kiểm tra tất cả các cặp số trong mảng.
+   - Độ phức tạp: O(n²). Quá chậm khi n lớn.
 
-Kiểm tra tất cả các cặp số trong mảng để xem có cặp nào cộng lại bằng target hay không.
+2. Hash Map (duyệt 2 lần)
+   - Lần 1: Lưu tất cả các phần tử và chỉ số của chúng vào hash map.
+   - Lần 2: Với mỗi số, tính phần còn thiếu để đạt target, rồi tra cứu trong hash map.
+   - Độ phức tạp: O(n) nhưng cần 2 vòng duyệt.
 
-Độ phức tạp: O(n²). Cách này rất chậm khi n lớn, không tối ưu.
+3. Hash Map (duyệt 1 lần) – cách tối ưu nhất
+   - Duyệt mảng từ trái sang phải.
+   - Với mỗi phần tử num, ta tính phần còn thiếu để đạt target:
+       need = target - num
+   - Nếu need đã tồn tại trong hash map → tìm được cặp thỏa mãn, trả về cặp chỉ số.
+   - Nếu chưa, thêm num vào hash map với:
+       key = giá trị số
+       value = chỉ số của số đó
+   - Nếu duyệt hết mà không tìm được thì trả về mảng rỗng [].
 
-Hash Map (duyệt hai lần)
+Độ phức tạp:
+- Time complexity: O(n)
+  Ta chỉ duyệt qua mảng một lần. Mỗi phép kiểm tra hoặc thêm vào hash map đều là O(1) trung bình.
+- Space complexity: O(n)
+  Cần một hash map để lưu trữ tối đa n phần tử trong trường hợp xấu nhất.
 
-Lần 1: Lưu tất cả các phần tử và chỉ số của chúng vào một hash map.
+Tóm lại: Dùng hash map với 1 vòng duyệt là cách giải hiệu quả và tối ưu nhất cho bài toán Two Sum.
+"""
 
-Lần 2: Với mỗi số trong mảng, tính phần còn thiếu để đạt target, rồi tra cứu trong hash map.
+with open("/mnt/data/two_sum_giai_thich.txt", "w", encoding="utf-8") as f:
+    f.write(text)
 
-Độ phức tạp: O(n) nhưng vẫn cần duyệt mảng hai lần.
-
-Hash Map (duyệt một lần) – cách tối ưu nhất
-
-Duyệt mảng từ trái sang phải.
-
-Với mỗi phần tử num, ta tính phần còn thiếu để đạt target:
-
-need = target - num
-
-
-Nếu need đã tồn tại trong hash map, ta tìm được cặp thỏa mãn và trả về chỉ số của chúng.
-
-Nếu chưa có, ta thêm num vào hash map với:
-
-key = giá trị số
-
-value = chỉ số của số đó
-
-Nếu duyệt hết mà không tìm được, trả về mảng rỗng [].
-
-Độ phức tạp
-
-Thời gian (Time complexity): O(n)
-
-Ta chỉ duyệt qua mảng đúng một lần.
-
-Mỗi phép kiểm tra hoặc thêm phần tử vào hash map có độ phức tạp trung bình O(1).
-
-Không gian (Space complexity): O(n)
-
-Hash map có thể lưu tối đa n phần tử trong trường hợp xấu nhất.
-
-Kết luận
-
-Trong ba cách giải, dùng hash map với một vòng duyệt là cách hiệu quả và tối ưu nhất cho bài toán Two Sum. Nó vừa đảm bảo tốc độ O(n), vừa đảm bảo tìm ra kết quả trong một lần duyệt.
+"/mnt/data/two_sum_giai_thich.txt"
