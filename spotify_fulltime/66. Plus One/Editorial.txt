@@ -1,0 +1,24 @@
+Bài toán: Plus One
+
+Cách giải tối ưu: Duyệt từ cuối mảng digits và xử lý cộng dồn (carry).
+
+- Bước 1: Bắt đầu từ chữ số cuối cùng trong mảng.
+    + Nếu chữ số < 9 → tăng nó lên 1 và trả về mảng (không cần xét tiếp).
+    + Nếu chữ số = 9 → gán nó thành 0 và tiếp tục sang chữ số bên trái.
+- Bước 2: Nếu duyệt hết toàn bộ mảng mà tất cả đều là 9,
+          thì mảng ban đầu đã trở thành toàn số 0. Khi đó cần thêm 1 vào đầu mảng.
+- Bước 3: Trả về kết quả cuối cùng.
+
+Ví dụ:
+- [1,2,3] → [1,2,4]
+- [4,3,2,1] → [4,3,2,2]
+- [9] → [1,0]
+- [9,9,9] → [1,0,0,0]
+
+---
+Complexity Analysis
+
+- Time Complexity: O(n).
+  Trong trường hợp xấu nhất (tất cả các chữ số đều bằng 9), ta duyệt qua toàn bộ mảng.
+- Space Complexity: O(1).
+  Không dùng thêm bộ nhớ phụ đáng kể, chỉ thay đổi trực tiếp trên mảng đầu vào.
