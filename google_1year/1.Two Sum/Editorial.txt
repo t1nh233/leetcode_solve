@@ -21,10 +21,10 @@ Các hướng giải cho bài Two Sum
        value = chỉ số của số đó
    - Nếu duyệt hết mà không tìm được thì trả về mảng rỗng [].
 
-Độ phức tạp:
+---
+Complexity Analysis
+
 - Time complexity: O(n)
   Ta chỉ duyệt qua mảng một lần. Mỗi phép kiểm tra hoặc thêm vào hash map đều là O(1) trung bình.
 - Space complexity: O(n)
   Cần một hash map để lưu trữ tối đa n phần tử trong trường hợp xấu nhất.
-
-Tóm lại: Dùng hash map với 1 vòng duyệt là cách giải hiệu quả và tối ưu nhất cho bài toán Two Sum.
