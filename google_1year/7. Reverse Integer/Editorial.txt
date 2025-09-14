@@ -1,0 +1,22 @@
+Bài toán: Reverse Integer
+
+Cách tối ưu nhất: Pop and Push Digits & Check before Overflow
+
+- Bước 1: Lấy ra biến dấu (sign), đưa x thành giá trị tuyệt đối (abs(x)).
+- Bước 2: Lần lượt pop các chữ số từ cuối của số (x % 10).
+- Bước 3: Với mỗi lần pop, kiểm tra xem res có bị overflow hay không.
+    + Nếu overflow → trả về 0.
+    + Nếu không → cập nhật res = res * 10 + pop.
+- Bước 4: Giảm x (x //= 10) và tiếp tục cho đến khi x = 0.
+- Bước 5: Trả về kết quả res sau khi gán lại dấu.
+
+Lưu ý: Trong Python integer không bị giới hạn 32-bit, nhưng ở đây ta mô phỏng giống như trong C++ nên vẫn phải kiểm tra overflow.
+
+---
+Complexity Analysis
+
+- Time Complexity: O(log(x)).
+  Vì số chữ số của x xấp xỉ log10(x), ta thực hiện vòng lặp theo số chữ số.
+- Space Complexity: O(1).
+  Chỉ dùng một vài biến phụ trợ, không dùng thêm bộ nhớ tỉ lệ với input.
+
