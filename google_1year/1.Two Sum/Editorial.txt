@@ -1,0 +1,51 @@
+Giải thích bài toán Two Sum
+Các hướng giải
+
+Brute Force (duyệt hai vòng lặp lồng nhau)
+
+Kiểm tra tất cả các cặp số trong mảng để xem có cặp nào cộng lại bằng target hay không.
+
+Độ phức tạp: O(n²). Cách này rất chậm khi n lớn, không tối ưu.
+
+Hash Map (duyệt hai lần)
+
+Lần 1: Lưu tất cả các phần tử và chỉ số của chúng vào một hash map.
+
+Lần 2: Với mỗi số trong mảng, tính phần còn thiếu để đạt target, rồi tra cứu trong hash map.
+
+Độ phức tạp: O(n) nhưng vẫn cần duyệt mảng hai lần.
+
+Hash Map (duyệt một lần) – cách tối ưu nhất
+
+Duyệt mảng từ trái sang phải.
+
+Với mỗi phần tử num, ta tính phần còn thiếu để đạt target:
+
+need = target - num
+
+
+Nếu need đã tồn tại trong hash map, ta tìm được cặp thỏa mãn và trả về chỉ số của chúng.
+
+Nếu chưa có, ta thêm num vào hash map với:
+
+key = giá trị số
+
+value = chỉ số của số đó
+
+Nếu duyệt hết mà không tìm được, trả về mảng rỗng [].
+
+Độ phức tạp
+
+Thời gian (Time complexity): O(n)
+
+Ta chỉ duyệt qua mảng đúng một lần.
+
+Mỗi phép kiểm tra hoặc thêm phần tử vào hash map có độ phức tạp trung bình O(1).
+
+Không gian (Space complexity): O(n)
+
+Hash map có thể lưu tối đa n phần tử trong trường hợp xấu nhất.
+
+Kết luận
+
+Trong ba cách giải, dùng hash map với một vòng duyệt là cách hiệu quả và tối ưu nhất cho bài toán Two Sum. Nó vừa đảm bảo tốc độ O(n), vừa đảm bảo tìm ra kết quả trong một lần duyệt.
