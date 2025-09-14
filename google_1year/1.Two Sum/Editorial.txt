@@ -1,4 +1,4 @@
-text = """Các hướng giải cho bài Two Sum
+"""Các hướng giải cho bài Two Sum
 
 1. Brute Force (duyệt 2 vòng lặp lồng nhau)
    - Kiểm tra tất cả các cặp số trong mảng.
@@ -26,9 +26,3 @@ text = """Các hướng giải cho bài Two Sum
   Cần một hash map để lưu trữ tối đa n phần tử trong trường hợp xấu nhất.
 
 Tóm lại: Dùng hash map với 1 vòng duyệt là cách giải hiệu quả và tối ưu nhất cho bài toán Two Sum.
-"""
-
-with open("/mnt/data/two_sum_giai_thich.txt", "w", encoding="utf-8") as f:
-    f.write(text)
-
-"/mnt/data/two_sum_giai_thich.txt"
