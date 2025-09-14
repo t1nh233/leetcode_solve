@@ -1,0 +1,29 @@
+Bài toán: Valid Parentheses
+
+Cách giải tối ưu: Sử dụng Stack để kiểm tra tính hợp lệ của các cặp ngoặc.
+
+- Bước 1: Khởi tạo một stack rỗng.
+- Bước 2: Duyệt từng ký tự trong chuỗi:
+    + Nếu gặp ký tự mở ngoặc ('(', '{', '[') → đẩy vào stack.
+    + Nếu gặp ký tự đóng ngoặc (')', '}', ']'):
+        * Nếu stack rỗng → trả về False (không có ngoặc mở để ghép).
+        * Ngược lại → pop phần tử trên cùng stack.
+          Nếu không khớp với ký tự đóng hiện tại → trả về False.
+- Bước 3: Sau khi duyệt hết chuỗi:
+    + Nếu stack rỗng → tất cả ngoặc đã ghép hợp lệ → trả về True.
+    + Nếu stack còn phần tử → còn ngoặc mở chưa được ghép → trả về False.
+
+Ví dụ:
+- "()" → True
+- "()[]{}" → True
+- "(]" → False
+- "([)]" → False
+- "{[]}" → True
+
+---
+Complexity Analysis
+
+- Time Complexity: O(n).
+  Với n = độ dài chuỗi, ta duyệt qua toàn bộ ký tự đúng 1 lần.
+- Space Complexity: O(n).
+  Trong trường hợp xấu nhất (toàn ngoặc mở), stack có thể chứa n phần tử.
