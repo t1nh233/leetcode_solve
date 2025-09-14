@@ -1,4 +1,6 @@
-"""Các hướng giải cho bài Two Sum
+Bài toán: Two Sum
+
+Các hướng giải cho bài Two Sum
 
 1. Brute Force (duyệt 2 vòng lặp lồng nhau)
    - Kiểm tra tất cả các cặp số trong mảng.
