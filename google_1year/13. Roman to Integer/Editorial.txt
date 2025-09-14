@@ -1,0 +1,26 @@
+Bài toán: Roman to Integer
+
+Cách giải tối ưu: Duyệt chuỗi từ phải sang trái và cộng/trừ dựa trên giá trị trước đó.
+
+- Bước 1: Xây dựng một bảng ánh xạ các ký tự La Mã sang số nguyên.
+- Bước 2: Khởi tạo biến kết quả res = 0 và prev_val = 0 (giá trị số La Mã trước đó).
+- Bước 3: Duyệt chuỗi s từ phải sang trái:
+    + Nếu giá trị hiện tại < prev_val → trừ giá trị đó khỏi res.
+    + Ngược lại → cộng giá trị đó vào res.
+- Bước 4: Cập nhật prev_val = giá trị hiện tại.
+- Bước 5: Trả về res.
+
+Ví dụ:
+- "III" → 3
+- "IV" → 4 (vì I < V → trừ 1)
+- "IX" → 9 (vì I < X → trừ 1)
+- "LVIII" → 58
+- "MCMXCIV" → 1994
+
+---
+Complexity Analysis
+
+- Time Complexity: O(n).
+  Với n = độ dài chuỗi s, ta duyệt mỗi ký tự đúng 1 lần.
+- Space Complexity: O(1).
+  Chỉ dùng thêm một số biến phụ và bảng ánh xạ có kích thước cố định (7 ký tự La Mã).
