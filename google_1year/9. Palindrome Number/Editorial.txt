@@ -1,0 +1,19 @@
+Bài toán: Palindrome Number
+
+Cách giải tối ưu: Pop up một nửa và so sánh
+
+- Bước 1: Nếu số nhỏ hơn 0 hoặc số chia hết cho 10 nhưng khác 0 (ví dụ: 1000 → False) thì trả về False.
+- Bước 2: Khởi tạo biến res = 0, lần lượt pop chữ số cuối của x và push vào res.
+- Bước 3: Tiếp tục lặp cho đến khi x <= res.
+- Bước 4: Sau đó xét:
+    + Nếu res == x → số là palindrome.
+    + Nếu res // 10 == x (trường hợp số có độ dài lẻ) → số là palindrome.
+    + Ngược lại → không phải palindrome.
+
+---
+Complexity Analysis
+
+- Time Complexity: O(log(x)).
+  Ta chỉ cần duyệt một nửa số chữ số của x, mà số chữ số tỷ lệ với log10(x).
+- Space Complexity: O(1).
+  Chỉ dùng thêm biến phụ res, không sử dụng bộ nhớ phụ tỉ lệ với input.
